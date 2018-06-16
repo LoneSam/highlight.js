@@ -1,0 +1,103 @@
+<script>
+
+
+
+function highlight()
+{
+
+	//startNode = document.getElementById('inputText').childNodes[0];
+	var selection = window.getSelection();
+	var startNode = selection.anchorNode;
+	/*console.log("selected node: ")
+	console.log(selection)
+	
+	console.log("Parent of selected Node: ")
+	console.log(startNode.parentNode);
+	*/
+	str = ""
+	node = startNode.parentNode.parentNode;
+	while (node != null) {
+		nodeAbove = node.previousSibling;
+		countAboves = 0;
+		while (nodeAbove != null){
+			//console.log(nodeAbove);
+			countAboves = countAboves + 1;
+			nodeAbove = nodeAbove.previousSibling;
+		}
+		/*
+		console.log(countAboves);
+		console.log(node);
+		console.log(node.nodeType);
+		console.log(node.nodeName);
+		console.log(node.id);
+		*/
+		str += countAboves + "-";
+		
+		
+		if (node.id != null) {
+			str += node.id;
+			break;
+		}
+		
+		str += node.nodeName + "_";
+		
+		console.log(str);
+		node = node.parentNode;
+		
+	}
+	//var endNode = selection.focusNode;
+	//var params = { width:1680, height:1050 };
+	//var str = jQuery.param( params );
+	//alert(str);
+	return 0;
+	/*
+	var str = encodeURIComponent(startNode);
+	//encode each part of node object
+	var str = "";
+	for (var key in startNode) {
+		if (str != "") {
+			str += "&";
+		}
+    str += key + "=" + encodeURIComponent(startNode[key]);
+	}
+	
+	
+	//window.location = window.location + str;
+	
+	text = selection.toString();
+	
+	console.log(startNode);
+	
+    inputText = document.getElementById("inputText")
+    var innerHTML = inputText.innerHTML
+    var index = innerHTML.indexOf(text);
+    if ( index >= 0 )
+    { 
+        innerHTML =  startNode.textContent.substring(0,index) + "<span class='highlight'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
+        inputText.innerHTML = innerHTML;
+    }
+*/
+
+}
+
+</script>
+
+<button onclick='highlight()'>Highlight</button>
+
+<style>
+.highlight
+{
+background-color:yellow;
+}
+</style>
+
+<div id='buttonElem'></div>
+<div id="inputText">
+<div>
+<p>
+</p>
+<p>
+The fox went over the fence
+</p>
+</div>
+</div>

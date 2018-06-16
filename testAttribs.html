@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+  <title>Attributes example</title>
+  
+  <script type="text/javascript">
+   var paragraph = document.getElementById("paragraph");
+   var result    = document.getElementById("result");
+   
+   function getHightlights(){
+	selection = window.getSelection();
+	var rangeObj = getRangeObject(selection);
+	console.log(rangeObj);
+	
+	//Convert to numbers
+	
+	
+	//Send numbers to URL bar
+	
+   }
+   
+   
+   //At page load, get the numbers from the URL
+   function createHighlights(){
+   
+   }
+
+   
+  </script>
+ </head>
+
+<body>
+
+<div onmouseup="getHighlights()">Click the text!</div>
+
+ <h2 id="paragraph" style="color: green;">Sample Paragraph</h2>
+  <p id="pone">
+	The big black sheep walked into the forestt in the middle of the night. It was scary...
+  </p>
+  <p id="ptwo">
+	Little did the little sheep know, she was gonna get hurt, bad real bbbaaadd.
+  </p>
+  <p id="pthree">
+	But little did the little farmer know what was best fr' it.
+  </p>
+ </form>
+ 
+ </div>
+ 
+</body>
+</html>
